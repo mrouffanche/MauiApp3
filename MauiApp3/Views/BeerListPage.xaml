@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.Views.BeerListPage"
+             Title="Liste des bières">
+
+    <Grid>
+        <CollectionView x:Name="BeersCollectionView"
+                        ItemsSource="{Binding Beers}"
+                        EmptyView="Chargement en cours...">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Image Source="{Binding ImageUrl}"
+                               WidthRequest="100"
+                               HeightRequest="100"
+                               Aspect="AspectFit" />
+                        <Label Text="{Binding Name}"
+                               FontSize="18"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Tagline}"
+                               FontSize="14"
+                               HorizontalOptions="Center" />
+                        <Button Text="Voir les détails"
+                                CommandParameter="{Binding Id}"
+                                Clicked="OnBeerSelected"
+                                HorizontalOptions="Center" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
