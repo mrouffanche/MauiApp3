@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MathisApp.Views.MainPage"
+            BarBackgroundColor="LightGray"
+            BarTextColor="Black"
+            SelectedTabColor="Blue">
+
+    <!-- Logo de l'application -->
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logo.png" />
+    </TabbedPage.ToolbarItems>
+
+    <!-- Tab 1 -->
+    <TabbedPage.Children>
+        <NavigationPage Title="Accueil" IconImageSource="tab1_icon.png">
+            <x:Arguments>
+                <ContentPage Title="Accueil">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Page d'accueil" FontSize="24" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+
+        <!-- Tab 2 -->
+        <NavigationPage Title="Page 2" IconImageSource="tab2_icon.png">
+            <x:Arguments>
+                <ContentPage Title="Page 2">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Page 2" FontSize="24" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+
+        <!-- Tab 3 -->
+        <NavigationPage Title="Page 3" IconImageSource="tab3_icon.png">
+            <x:Arguments>
+                <ContentPage Title="Page 3">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Page 3" FontSize="24" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+
+        <!-- Tab 4 -->
+        <NavigationPage Title="Page 4" IconImageSource="tab4_icon.png">
+            <x:Arguments>
+                <ContentPage Title="Page 4">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Page 4" FontSize="24" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>
