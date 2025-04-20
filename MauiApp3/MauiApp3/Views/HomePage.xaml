@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.Views.HomePage"
+             Title="Accueil">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <!-- Titre principal et sous-titre -->
+            <Label Text="Bienvenue dans mon application !"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   Margin="0, 20, 0, 10" />
+            <Label Text="Vive la bière !"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <!-- Deux images côte à côte -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image Source="bernbiere1.png" WidthRequest="150" HeightRequest="150" Margin="10" />
+                <Image Source="bernbiere2.png" WidthRequest="150" HeightRequest="150" Margin="10" />
+            </StackLayout>
+
+            <!-- Bouton pour ouvrir la page GIF -->
+            <Button Text="Voir un GIF"
+                    Clicked="OnGifButtonClicked"
+                    HorizontalOptions="Center"
+                    Margin="20" />
+            <Label Text="Carrousel :"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+            <CarouselView>
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>bernvin1.png</x:String>
+                        <x:String>bernshot1.png</x:String>
+                        <x:String>bernmaybe.png</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}"
+                               WidthRequest="150"
+                               HeightRequest="150"
+                               Margin="10"
+                               Aspect="AspectFit" />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
